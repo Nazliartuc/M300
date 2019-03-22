@@ -195,7 +195,7 @@ Die Vagrant ssh Verbindung konnte hergestellt werden.
 
 Der Zugriff auf Nextcloud hat Funktioniert über den angegebenen Port.
 
-![Nextcloud Zugriff](nextcloudlogin.png)
+![Nextcloud Zugriff](Nextcloudlogin.png)
 
 Mit dem Angegebenen User Anmelden hat Funktioniert.
 
