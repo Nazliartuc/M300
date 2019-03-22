@@ -187,7 +187,7 @@ Dies ist der Teil in welchem man den Nextcloud User erstellt mit seinem Passwort
 | Login                  | Login hat Funktioniert                     |
 | Dateien Hochladen auf Nextcloud      | Dateien Hochladen auf Nextcloud hat Funtioniert.         |
 
-Ich habe Vagrant up gemacht und die VM hat konnte ohne Probleme starten.
+Ich habe Vagrant up gemacht und die VM konnte ohne Probleme gestartet werden.
 
 ![Vagrantup](Vagrantup.png)
 
@@ -207,7 +207,7 @@ Login mit User hat Funktioniert.
 
 ![Login erfolg](Loginerfolg.png)
 
-Datei in eine AblageHochladen hat Funktioniert.
+Datei in eine Ablage Hochladen hat Funktioniert.
 
 ![Hochladen](Hochladen.png)
 
@@ -215,42 +215,42 @@ Datei in eine AblageHochladen hat Funktioniert.
 ## Probleme <a name="Probleme"></a>
 In diesem Abschnitt der Dokumentation werde ich erzählen, was in diesem Projekt schief gelaufen ist und was ich zur Behebung der Probleme gemacht habe.
 
-Anfangs wollte ich Owncloud als Cloud verwenden jedoch hatte ich da einige Schwierigkeiten ich habe in die Owncloud Installation sehr viel Zeit investiert. Ich habe verschiedenste Dokumentationen verwendet, mit welchen ich versucht habe das Ergebnis zu erzielen.
+Anfangs wollte ich Owncloud als Cloud verwenden jedoch hatte ich da einige Schwierigkeiten. Ich habe in die Owncloud Installation sehr viel Zeit investiert. Dazu habe verschiedenste Dokumentationen verwendet, mit welchen ich versucht habe das Ergebnis zu erzielen.
 
 Der erste Problem Punkt war, dass die Datenbank nicht wie gewünscht sich Installieren lassen wollte. Ich hatte anfangs auch Mysql verwendet, nur ist die Installation ohne eine Error Meldung abgestürzt. Leider konnte ich da nicht viel machen.
 Als Problem Lösung habe ich weitere Dokumentationen gesucht mit, welchen ich Owncloud installieren könnte und bin darauf gestoßen MariaDB zu verwenden. Die Installation hatte ohne Probleme funktioniert.
 
-as zweite Problem war mit der MariaDB da ich nicht wusste, wie ich die Berechtigungen setzen kann. Ich habe viel gegoogelt und mich informiert jedoch bin ich leider nicht füündig geworden und habe wieder zu Mysql gewechselt.
+Das zweite Problem war mit der MariaDB das ich nicht wusste, wie ich die Berechtigungen setzen kann. Ich habe viel gegoogelt und mich informiert jedoch bin ich leider nicht fündig geworden und habe wieder zu Mysql gewechselt.
 
-Nachdem ich eine funktionierende Installation von Mysql gefunden habe, musste ich rausfinden wie ich die Berechtigungen und die Datenbank Konfigurationen über das Vagrantfile bzw. meine Config.sh einfüge.
+Nachdem ich eine funktionierende Installation von Mysql gefunden habe, musste ich rausfinden wie ich die Berechtigungen und die Datenbank Konfigurationen über das "Vagrantfile" bzw. meine "Config.sh" einfüge.
 
-Nachdem ich die Datenbank Probleme behoben hatte, wollte der Eintrag für Apache nicht Funktionieren. Der Eintrag war im "Ownclod.conf" eingetragen jedoch, wenn ich versucht habe auf den Localhost zuzugreifen bekam ich nur eine Leerseite, somit habe ich festgestellt das meine Zeit zu knapp wird, wenn die Probleme sich weiterhin so ziehen.
+Nachdem ich die Datenbank Probleme behoben hatte, wollte der Eintrag für Apache nicht Funktionieren. Der Eintrag war im "Ownclod.conf" eingetragen jedoch, wenn ich versucht habe auf den Localhost zuzugreifen bekam ich nur eine Leerseite. Somit habe ich festgestellt das meine Zeit zu knapp wird, wenn die Probleme sich weiterhin so rausziehen.
 
-Schluss und endlich habe ich einen Klassenkameraden von der Paralell klasse gefragt der auch eine Cloud aufgesetzt hat. Er hat mir den Tipp gegeben, mit Nextcloud zu arbeiten das das Aufsetzen ein einfacherer Prozess sei als bei Owncloud.
+Schluss und endlich habe ich einen Klassenkameraden von der Paralell klasse gefragt der auch eine Cloud aufgesetzt hat. Er hat mir den Tipp gegeben, mit Nextcloud zu arbeiten da, dass Aufsetzen ein einfacherer Prozess sei als bei Owncloud.
 
 ## Probleme Nextcloud <a name="ProoblemeNextcloud"></a>
 Dank dem Tipp des Kollegen in der parallel Klasse haben sich meine Probleme mit Nextcloud tatsächlich vermindert. Leider hat die Installation nicht von Anfang an einwandfrei funktioniert.
 
 Das eine Problem war, das ich das falsche Betriebssystem verwendet habe. Nextcloud ist leider mit der Linux Version "Xenial64" nicht kompatibel. Ich musste für die Installation von Nextcloud auf "bionic64" wechseln.
-Dieses Problem habe ich gefunden bei der Suche nach Anleitungen für die Installation für Nextcloud.
+Eine lösung für dieses Problem habe ich gefunden bei der Suche nach Anleitungen für die Installation für Nextcloud.
 
-Dannah hatte ich nur noch ein Zweites Problem unzwar habe ich einem eintrag der berechtigung vergessen "Localhost" einztragen somit hat die Verbindung auf den Owncloud Server nicht Funktioniert bzw. der Zugriff wurde nicht gewährt.
+Dannach hatte ich nur noch ein Zweites Problem undzwar habe ich bei einem eintrag die berechtigung vergessen einzutragen und zwar "Localhost",  somit hat die Verbindung auf den Owncloud Server nicht Funktioniert bzw. der Zugriff wurde nicht gewährt.
 
     mysql -uroot -pnSscVjjraPVQ6CEAkktL -e "GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost'"
 
 ## Persönlicher Wissensstand <a name="PersönlicherWissensstand"></a>
-|  Themen | Gelernt  |
+|  Themen                    | Gelernt                                  |
 |---|---|
-|  Linux   | Da wir mit Linux gearbeitet haben hat sich mein Wissenstand über Linux automatisch erweitert. Vorallem mit der Datenbank integration.       | 
-|  Virtualisierung  |  In diesem Modul hatt sich mein Wissen über Virtualisierung nur im Automatisierten bereich erweitert. Grundsätzlich hatte ich vor kurzem ein Virtualisieruungs Modul und dadurch ist mein Wissen erweitert worden.      |
-|  Vagrant   |  Vagrant hatte ich vorher gar nicht gekannt. Ich wusste, dass es Automatisierungs-Tools gibt jedoch noch keines kennengelernt Vagrant ist das erste, welches ich kennen gelernt habe.        |
-|  Versionsverwaltung    |  Ich weiss in der Theorie was Versionsveraltung ist, je4doch habe ich nie Damit gearbeitet.        |
-|  Mark Down     | Mark Down habe ich Persönlikch nicht gekannt. Ich kannte die art dieser Dokumentation. Dank diesem Modul konnte ich selbst mal so eine Art von Dokumentation         |
-| Systemsicherheit | Ich kannte im vorhien die Firewall von inux schon und hatte diese auch schon Konfiguriert, dadurch war das für mich kein grosser Leneffekt. |
+|  Linux                    | Da wir mit Linux gearbeitet haben hat sich mein Wissenstand über Linux Automatisch erweitert. Vorallem mit der Datenbank integration.       | 
+|  Virtualisierung           |  In diesem Modul hatt sich mein Wissen über Virtualisierung nur im Automatisierten bereich erweitert. Grundsätzlich hatte ich vor kurzem ein Virtualisieruungs Modul und dadurch ist mein Wissen erweitert worden.                         |
+|  Vagrant                   |  Vagrant hatte ich vorher gar nicht gekannt. Ich wusste, dass es Automatisierungs-Tools gibt jedoch noch keines kennengelernt Vagrant ist das erste, welches ich kennen gelernt habe.                                                             |
+|  Versionsverwaltung        |  Ich weiss in der Theorie was Versionsveraltung ist, jedoch habe ich nie Damit gearbeitet.     |
+|  Mark Down                 | Mark Down habe ich Persönlikch nicht gekannt. Ich kannte die art dieser Dokumentation. Dank diesem Modul konnte ich selbst mal so eine Art von Dokumentation                |
+| Systemsicherheit          | Ich kannte im vorhinein die Firewall von Linux schon und hatte diese auch schon Konfiguriert, dadurch war das für mich kein grosser Lerneffekt.                                            |
 
 ## Reflexion <a name="Reflexion"></a>
-Ich habe den Webservice Nextcloud installiert. Vorläufig war geplant Owncloud zu installieren, jedoch durch gewisse Schwierigkeiten habe ich das Ziel mit Owncloud nicht erreicht.Nextcloud war einffacher zu installieren und konnte somit das Ziel erreichen.
+Ich habe den Webservice Nextcloud installiert. Vorläufig war geplant Owncloud zu installieren, jedoch durch gewisse Schwierigkeiten habe ich das Ziel mit Owncloud nicht erreicht.Nextcloud war einfacher zu installieren und konnte somit das Ziel erreichen.
 
-Ich habe gelernt wie ich eine Mysql DB über Vagrant konfigurieren kann. Dassheisst mit Zugriffs berechtigungen und die Freigabe über den Webbrowser.
+Ich habe gelernt wie ich eine Mysql DB über Vagrant konfigurieren kann. Dassheisst mit Zugriffsberechtigungen und die Freigabe über den Webbrowser.
 
-Ich habe Festgestellt, dass ich ich zu extrem auf Owncloud fixiert habe. Dies hat dazu geführt, dass ich für die Nextcloud konnfiguration und somit für die Dokumentation zu wenig Zeit hatte. Das bedeutet für mich, dass ich mich in zukunft um eine Zweite Variante verlassen soll und nicht an die erst beste Lösung klammern soll.
+Ich habe Festgestellt, dass ich mich zu extrem auf Owncloud fixiert habe. Dies hat dazu geführt, dass ich für die Nextcloud konnfiguration und somit für die Dokumentation zu wenig Zeit hatte. Das bedeutet für mich, dass ich mich in Zukunft um eine Zweite Variante verlassen soll und nicht an die erst beste Lösung klammern soll.
